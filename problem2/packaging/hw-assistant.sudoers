@@ -1,0 +1,5 @@
+# /etc/sudoers.d/hw-assistant   (install: sudo install -m 0440 hw-assistant.sudoers /etc/sudoers.d/hw-assistant; validate: visudo -cf <file>)
+# Allows ONE binary with ONE exact argument list, no password, only for members of group "hwassist".
+# Sudoers matches arguments literally, so `dmidecode -t memory; rm -rf /` or `dmidecode -t memory --dump-bin x` is denied.
+Defaults!/usr/sbin/dmidecode !requiretty, env_reset
+%hwassist ALL=(root) NOPASSWD: /usr/sbin/dmidecode -t memory

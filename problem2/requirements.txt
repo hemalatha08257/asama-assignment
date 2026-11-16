@@ -1,0 +1,1 @@
+# stdlib only. Optional: Ollama (https://ollama.com) + 'ollama pull qwen2.5:7b' for LLM mode
